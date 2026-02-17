@@ -591,7 +591,10 @@ function App() {
     return (
       <div className="main-container">
         <div className="top-bar">
-          <button className="back-button" onClick={() => setShowHighScore(false)}>
+          <button className="back-button" onClick={() => {
+            playSound('click')
+            setShowHighScore(false)
+          }}>
             ←
           </button>
         </div>
@@ -604,7 +607,10 @@ function App() {
           <div className="high-score-label">점</div>
         </div>
         <div className="button-container">
-          <button className="main-button start-button" onClick={() => setShowHighScore(false)}>
+          <button className="main-button start-button" onClick={() => {
+            playSound('click')
+            setShowHighScore(false)
+          }}>
             돌아가기
           </button>
         </div>
