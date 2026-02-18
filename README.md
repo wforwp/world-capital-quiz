@@ -13,19 +13,38 @@
 
 ## 설치 및 실행
 
+### 로컬 개발 환경에서 테스트하기
+
 ```bash
 # 의존성 설치
 npm install
+# 또는
+bun install
 
-# 개발 서버 실행
+# 개발 서버 실행 (로컬 테스트)
 npm run dev
+# 또는
+bun run dev
 
+# 브라우저에서 http://localhost:5173 (또는 터미널에 표시된 주소) 접속
+# 코드 변경 시 자동으로 새로고침됩니다
+```
+
+### 프로덕션 빌드
+
+```bash
 # 프로덕션 빌드
 npm run build
+# 또는
+bun run build
 
 # 빌드 결과 미리보기
 npm run preview
+# 또는
+bun run preview
 ```
+
+**참고**: GitHub에 푸시하기 전에 반드시 로컬에서 `npm run dev`로 테스트해보세요!
 
 ## 기술 스택
 

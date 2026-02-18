@@ -166,11 +166,23 @@ function App() {
       if (event.state && event.state.screen === 'dummy') {
         window.history.pushState({ screen: 'main' }, '', window.location.href)
         setScreen('main')
+        setShowHighScore(false)
+        return
+      }
+
+      // 점수보기 화면에서 뒤로가기를 누른 경우 (가장 먼저 체크)
+      if (showHighScore || (event.state && event.state.screen === 'highScore')) {
+        setShowHighScore(false)
+        setScreen('main')
+        // 메인 화면 상태가 아니면 메인으로 push
+        if (!event.state || event.state.screen !== 'main') {
+          window.history.pushState({ screen: 'main' }, '', window.location.href)
+        }
         return
       }
 
       // 메인 화면에서 뒤로가기를 누르면 더미 항목으로 가지만, 즉시 메인으로 다시 push
-      if (screen === 'main') {
+      if (screen === 'main' && !showHighScore) {
         if (event.state && event.state.screen === 'dummy') {
           window.history.pushState({ screen: 'main' }, '', window.location.href)
           setScreen('main')
@@ -223,18 +235,24 @@ function App() {
         // 다른 화면이면 해당 화면으로 이동
         if (event.state.screen === 'main') {
           setScreen('main')
+          setShowHighScore(false)
         } else if (event.state.screen === 'difficulty') {
           setScreen('difficulty')
         } else if (event.state.screen === 'game') {
           setScreen('game')
         } else if (event.state.screen === 'help') {
           setScreen('help')
+        } else if (event.state.screen === 'highScore') {
+          setShowHighScore(true)
+          setScreen('main')
         } else {
           setScreen('main')
+          setShowHighScore(false)
           window.history.pushState({ screen: 'main' }, '', window.location.href)
         }
       } else {
         setScreen('main')
+        setShowHighScore(false)
         window.history.pushState({ screen: 'main' }, '', window.location.href)
       }
     }
@@ -244,7 +262,7 @@ function App() {
     return () => {
       window.removeEventListener('popstate', handlePopState)
     }
-  }, [screen])
+  }, [screen, showHighScore])
 
   const handleStart = () => {
     playSound('click')
@@ -535,6 +553,7 @@ function App() {
   const handleScores = () => {
     playSound('click')
     setShowHighScore(true)
+    window.history.pushState({ screen: 'highScore' }, '', window.location.href)
   }
 
   const helpPages = [

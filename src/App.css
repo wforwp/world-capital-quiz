@@ -6,9 +6,9 @@
   min-height: 100vh; /* 컨테이너 최소 높이 */
   max-height: 100vh; /* 컨테이너 최대 높이 */
   padding: clamp(1rem, 3vh, 2rem); /* 좌우 패딩: 최소 1rem, 최대 2rem, 기본 3vh */
-  padding-top: clamp(3rem, 8vh, 5rem); /* 상단 패딩: 최소 3rem, 최대 5rem, 기본 8vh */
-  padding-bottom: clamp(5rem, 12vh, 8rem); /* 하단 패딩: 최소 5rem, 최대 8rem, 기본 12vh */
-  gap: clamp(0.5rem, 1.5vh, 1.5rem); /* 요소 간 간격: 최소 0.5rem, 최대 1.5rem, 기본 1.5vh */
+  padding-top: clamp(4rem, 10vh, 6rem); /* 상단 패딩: 난이도 선택 화면과 동일하게 조정 */
+  padding-bottom: clamp(5rem, 12vh, 8rem); /* 하단 패딩: 난이도 선택 화면과 동일 */
+  gap: clamp(1rem, 2.5vh, 2rem); /* 요소 간 간격: 난이도 선택 화면과 동일 */
   background-color: #010E1F;
   position: relative;
   overflow: hidden;
@@ -17,8 +17,10 @@
 }
 
 .main-container.difficulty-container {
-  justify-content: space-between;
-  padding-bottom: clamp(6rem, 15vh, 10rem); /* 난이도 선택 화면 하단 패딩: 최소 6rem, 최대 10rem, 기본 15vh */
+  justify-content: flex-start;
+  padding-top: clamp(4rem, 10vh, 6rem); /* 난이도 선택 화면 상단 패딩: 뒤로가기 버튼 공간 확보 */
+  padding-bottom: clamp(5rem, 12vh, 8rem); /* 난이도 선택 화면 하단 패딩: 스피드 모드 공간 확보 */
+  gap: clamp(1rem, 2.5vh, 2rem); /* 난이도 선택 화면 요소 간 간격 */
 }
 
 .top-bar {
@@ -38,17 +40,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4vh; /* 로고 컨테이너 상단 마진: 화면 높이의 4% */
+  margin-top: clamp(1rem, 2vh, 1.5rem); /* 로고 컨테이너 상단 마진: 난이도 선택 화면과 동일 */
   flex-shrink: 0;
 }
 
 .logo-container.difficulty-screen {
-  margin-top: 2vh; /* 난이도 선택 화면 로고 상단 마진: 화면 높이의 2% */
+  margin-top: clamp(1rem, 2vh, 1.5rem); /* 난이도 선택 화면 로고 상단 마진: 뒤로가기 버튼과의 간격 */
   flex: 0 0 auto;
 }
 
 .main-logo {
-  max-width: 267px; /* 로고 최대 너비 */
+  max-width: 224px; /* 로고 최대 너비 */
   width: 100%; /* 반응형 너비 */
   height: auto; /* 비율 유지 */
   object-fit: contain;
@@ -61,7 +63,7 @@
 }
 
 .main-logo.difficulty-logo {
-  max-width: 267px; /* 난이도 선택 화면 로고 최대 너비: 메인 화면과 동일 */
+  max-width: 224px; /* 난이도 선택 화면 로고 최대 너비: 메인 화면과 동일 */
 }
 
 .main-logo.no-animation {
@@ -85,7 +87,7 @@
   font-weight: 400;
   color: #ffffff;
   text-align: center;
-  margin: 0;
+  margin: clamp(0.5rem, 1.5vh, 1rem) 0; /* 제목 상하 마진: 난이도 선택 화면과 동일 */
   text-shadow: 
     0 0 10px rgba(59, 130, 246, 0.8),
     0 0 20px rgba(59, 130, 246, 0.6),
@@ -101,7 +103,7 @@
 
 .game-title.difficulty-title {
   font-size: clamp(1.5rem, 4vw, 2.5rem); /* 난이도 선택 화면 제목 폰트 크기: 메인 화면과 동일 */
-  margin: 0; /* 난이도 선택 화면 제목 상하 마진: 메인 화면과 동일 */
+  margin: clamp(0.5rem, 1.5vh, 1rem) 0; /* 난이도 선택 화면 제목 상하 마진: 로고와 버튼 사이 간격 */
 }
 
 @keyframes glow {
@@ -147,19 +149,20 @@
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* 버튼 간 간격 */
+  gap: clamp(1rem, 2.5vh, 1.5rem); /* 버튼 간 간격: 난이도 선택 화면과 동일 */
   width: 100%; /* 전체 너비 */
   max-width: min(300px, 80vw); /* 버튼 컨테이너 최대 너비: 300px 또는 화면 너비의 80% 중 작은 값 */
-  margin-bottom: 8rem; /* 하단 마진 */
+  margin-top: clamp(0.5rem, 1.5vh, 1rem); /* 버튼 컨테이너 상단 마진: 타이틀과의 간격 (난이도 선택 화면과 동일) */
+  margin-bottom: clamp(3rem, 8vh, 5rem); /* 버튼 컨테이너 하단 마진: 하단 요소와의 간격 (난이도 선택 화면과 동일) */
   flex-shrink: 0;
 }
 
 .button-container.difficulty-buttons {
-  margin-bottom: 0; /* 난이도 선택 화면 버튼 컨테이너 하단 마진 제거 */
-  gap: clamp(0.75rem, 2vh, 1.5rem); /* 난이도 선택 화면 버튼 간 간격: 최소 0.75rem, 최대 1.5rem, 기본 2vh */
-  flex: 1 1 auto;
-  justify-content: center;
-  min-height: 0;
+  margin-top: clamp(0.5rem, 1.5vh, 1rem); /* 난이도 선택 화면 버튼 컨테이너 상단 마진: 타이틀과의 간격 */
+  margin-bottom: clamp(3rem, 8vh, 5rem); /* 난이도 선택 화면 버튼 컨테이너 하단 마진: 스피드 모드와의 간격 */
+  gap: clamp(1rem, 2.5vh, 1.5rem); /* 난이도 선택 화면 버튼 간 간격: 최소 1rem, 최대 1.5rem, 기본 2.5vh */
+  max-width: min(300px, 80vw); /* 버튼 컨테이너 최대 너비: 메인 화면과 동일 */
+  flex-shrink: 0; /* 메인 화면과 동일한 flex 설정 */
 }
 
 .main-button {
@@ -246,12 +249,15 @@
   text-align: center;
   margin: 0;
   letter-spacing: 0.05em;
-  position: absolute;
-  bottom: 2rem;
+  position: fixed; /* 스피드 모드와 동일한 위치에 배치하기 위해 fixed 사용 */
+  bottom: clamp(1.5rem, 4vh, 3rem); /* 스피드 모드와 동일한 하단 위치 */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 1000; /* 스피드 모드와 동일한 z-index */
   width: 100%;
+  max-width: 100vw;
+  padding: 0 clamp(1rem, 3vw, 2rem); /* 스피드 모드와 동일한 패딩 */
+  box-sizing: border-box;
 }
 
 .speed-mode-container {
@@ -956,8 +962,15 @@
 
 @media (max-width: 768px) {
   .main-container {
-    gap: 3rem;
+    gap: clamp(0.75rem, 2vh, 1.5rem); /* 모바일 요소 간 간격: 난이도 선택 화면과 동일 */
     padding: 1rem;
+    padding-top: clamp(3rem, 8vh, 5rem); /* 모바일 상단 패딩: 난이도 선택 화면과 동일 */
+    padding-bottom: clamp(4rem, 10vh, 6rem); /* 모바일 하단 패딩: 난이도 선택 화면과 동일 */
+  }
+
+  .company-text {
+    bottom: clamp(1rem, 3vh, 2rem); /* 모바일 회사 텍스트 하단 위치: 스피드 모드와 동일 */
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem); /* 모바일 회사 텍스트 패딩: 스피드 모드와 동일 */
   }
 
   .top-bar {
@@ -980,7 +993,11 @@
   }
 
   .button-container {
-    max-width: 280px;
+    max-width: 280px; /* 모바일 버튼 컨테이너 최대 너비 */
+  }
+
+  .button-container.difficulty-buttons {
+    max-width: 280px; /* 모바일 난이도 선택 화면 버튼 컨테이너 최대 너비: 메인 화면과 동일 */
   }
 
   .main-button {
@@ -1026,16 +1043,28 @@
   }
 
   .button-container {
-    margin-bottom: 6rem;
+    margin-top: clamp(0.3rem, 1vh, 0.8rem); /* 모바일 버튼 컨테이너 상단 마진: 난이도 선택 화면과 동일 */
+    margin-bottom: clamp(2.5rem, 7vh, 4rem); /* 모바일 버튼 컨테이너 하단 마진: 난이도 선택 화면과 동일 */
+    gap: clamp(0.75rem, 2vh, 1.2rem); /* 모바일 버튼 간 간격: 난이도 선택 화면과 동일 */
   }
 
   .button-container.difficulty-buttons {
-    margin-bottom: 0;
-    gap: clamp(0.5rem, 1.5vh, 1rem);
+    margin-top: clamp(0.3rem, 1vh, 0.8rem); /* 모바일 난이도 선택 화면 버튼 컨테이너 상단 마진 */
+    margin-bottom: clamp(2.5rem, 7vh, 4rem); /* 모바일 난이도 선택 화면 버튼 컨테이너 하단 마진 */
+    gap: clamp(0.75rem, 2vh, 1.2rem); /* 모바일 난이도 선택 화면 버튼 간 간격 */
+    flex-shrink: 0; /* 모바일에서도 메인 화면과 동일한 flex 설정 */
+  }
+
+  .logo-container {
+    margin-top: clamp(0.5rem, 1.5vh, 1rem); /* 모바일 로고 컨테이너 상단 마진: 난이도 선택 화면과 동일 */
   }
 
   .logo-container.difficulty-screen {
-    margin-top: clamp(1rem, 3vh, 2rem);
+    margin-top: clamp(0.5rem, 1.5vh, 1rem); /* 모바일 난이도 선택 화면 로고 상단 마진 */
+  }
+
+  .game-title {
+    margin: clamp(0.3rem, 1vh, 0.8rem) 0; /* 모바일 제목 상하 마진: 난이도 선택 화면과 동일 */
   }
 
   .main-logo.difficulty-logo {
@@ -1044,11 +1073,13 @@
 
   .game-title.difficulty-title {
     font-size: 1.8rem; /* 모바일 난이도 선택 화면 제목 폰트 크기: 메인 화면과 동일 */
-    margin: 0; /* 모바일 난이도 선택 화면 제목 상하 마진: 메인 화면과 동일 */
+    margin: clamp(0.3rem, 1vh, 0.8rem) 0; /* 모바일 난이도 선택 화면 제목 상하 마진 */
   }
 
   .main-container.difficulty-container {
-    padding-bottom: clamp(7rem, 18vh, 12rem);
+    padding-top: clamp(3rem, 8vh, 5rem); /* 모바일 난이도 선택 화면 상단 패딩 */
+    padding-bottom: clamp(4rem, 10vh, 6rem); /* 모바일 난이도 선택 화면 하단 패딩 */
+    gap: clamp(0.75rem, 2vh, 1.5rem); /* 모바일 난이도 선택 화면 요소 간 간격 */
   }
 
   .speed-mode-container {
