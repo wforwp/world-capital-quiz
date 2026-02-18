@@ -61,7 +61,7 @@
 }
 
 .main-logo.difficulty-logo {
-  max-width: min(180px, 20vw, 15vh); /* 난이도 선택 화면 로고 최대 너비: 180px, 화면 너비의 20%, 화면 높이의 15% 중 최소값 */
+  max-width: 267px; /* 난이도 선택 화면 로고 최대 너비: 메인 화면과 동일 */
 }
 
 .main-logo.no-animation {
@@ -100,8 +100,8 @@
 }
 
 .game-title.difficulty-title {
-  font-size: clamp(1.3rem, 3.5vw, 2rem); /* 난이도 선택 화면 제목 폰트 크기: 최소 1.3rem, 최대 2rem, 기본 3.5vw */
-  margin: 1vh 0; /* 난이도 선택 화면 제목 상하 마진: 화면 높이의 1% */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* 난이도 선택 화면 제목 폰트 크기: 메인 화면과 동일 */
+  margin: 0; /* 난이도 선택 화면 제목 상하 마진: 메인 화면과 동일 */
 }
 
 @keyframes glow {
@@ -1039,12 +1039,12 @@
   }
 
   .main-logo.difficulty-logo {
-    max-width: min(150px, 18vw, 12vh);
+    max-width: 200px; /* 모바일 난이도 선택 화면 로고 최대 너비: 메인 화면과 동일 */
   }
 
   .game-title.difficulty-title {
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
-    margin: clamp(0.3rem, 1vh, 0.8rem) 0;
+    font-size: 1.8rem; /* 모바일 난이도 선택 화면 제목 폰트 크기: 메인 화면과 동일 */
+    margin: 0; /* 모바일 난이도 선택 화면 제목 상하 마진: 메인 화면과 동일 */
   }
 
   .main-container.difficulty-container {
