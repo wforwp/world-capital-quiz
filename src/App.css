@@ -35,6 +35,10 @@
   margin-top: 4rem;
 }
 
+.logo-container.difficulty-screen {
+  margin-top: 2rem;
+}
+
 .main-logo {
   max-width: 267px;
   width: 100%;
@@ -46,6 +50,10 @@
           drop-shadow(0 0 30px rgba(59, 130, 246, 0.4))
           drop-shadow(0 0 40px rgba(59, 130, 246, 0.3))
           drop-shadow(0 0 50px rgba(59, 130, 246, 0.2));
+}
+
+.main-logo.difficulty-logo {
+  max-width: 180px;
 }
 
 .main-logo.no-animation {
@@ -80,6 +88,11 @@
   animation: fadeIn 0.3s ease-in 0s both, glow 3s ease-in-out infinite;
   letter-spacing: 0.05em;
   position: relative;
+}
+
+.game-title.difficulty-title {
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
 @keyframes glow {
@@ -129,6 +142,11 @@
   width: 100%;
   max-width: 300px;
   margin-bottom: 8rem;
+}
+
+.button-container.difficulty-buttons {
+  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 .main-button {
@@ -239,6 +257,7 @@
   visibility: visible;
   opacity: 1;
   box-sizing: border-box;
+  padding: 0 1rem;
 }
 
 .speed-mode-text {
@@ -985,6 +1004,23 @@
 
   .button-container {
     margin-bottom: 6rem;
+  }
+
+  .button-container.difficulty-buttons {
+    margin-bottom: 1rem;
+  }
+
+  .logo-container.difficulty-screen {
+    margin-top: 1.5rem;
+  }
+
+  .main-logo.difficulty-logo {
+    max-width: 150px;
+  }
+
+  .game-title.difficulty-title {
+    font-size: 1.6rem;
+    margin: 0.3rem 0;
   }
 
   .speed-mode-container {

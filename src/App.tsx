@@ -791,11 +791,11 @@ function App() {
             ←
           </button>
         </div>
-        <div className="logo-container">
-          <img src={wcqImage} alt="World Capital Quiz" className="main-logo no-animation" />
+        <div className="logo-container difficulty-screen">
+          <img src={wcqImage} alt="World Capital Quiz" className="main-logo no-animation difficulty-logo" />
         </div>
-        <h1 className="game-title">난이도 선택</h1>
-        <div className="button-container">
+        <h1 className="game-title difficulty-title">난이도 선택</h1>
+        <div className="button-container difficulty-buttons">
           <button 
             className="main-button difficulty-button easy-button" 
             onClick={() => handleDifficulty('easy')}
