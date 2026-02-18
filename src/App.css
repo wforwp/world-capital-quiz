@@ -2,17 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 100vh;
   max-height: 100vh;
-  padding: 2rem;
-  padding-bottom: 6rem;
-  gap: 1rem;
+  padding: clamp(1rem, 3vh, 2rem);
+  padding-top: clamp(3rem, 8vh, 5rem);
+  padding-bottom: clamp(5rem, 12vh, 8rem);
+  gap: clamp(0.5rem, 1.5vh, 1.5rem);
   background-color: #010E1F;
   position: relative;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
+}
+
+.main-container.difficulty-container {
+  justify-content: space-between;
+  padding-bottom: clamp(6rem, 15vh, 10rem);
 }
 
 .top-bar {
@@ -32,15 +38,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 4rem;
+  margin-top: 4vh;
+  flex-shrink: 0;
 }
 
 .logo-container.difficulty-screen {
-  margin-top: 2rem;
+  margin-top: 2vh;
+  flex: 0 0 auto;
 }
 
 .main-logo {
-  max-width: 267px;
+  max-width: min(267px, 25vw);
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -53,7 +61,7 @@
 }
 
 .main-logo.difficulty-logo {
-  max-width: 180px;
+  max-width: min(180px, 20vw, 15vh);
 }
 
 .main-logo.no-animation {
@@ -73,7 +81,7 @@
 
 .game-title {
   font-family: 'Do Hyeon', 'Orbitron', sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 400;
   color: #ffffff;
   text-align: center;
@@ -88,11 +96,12 @@
   animation: fadeIn 0.3s ease-in 0s both, glow 3s ease-in-out infinite;
   letter-spacing: 0.05em;
   position: relative;
+  flex-shrink: 0;
 }
 
 .game-title.difficulty-title {
-  font-size: 2rem;
-  margin: 0.5rem 0;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  margin: 1vh 0;
 }
 
 @keyframes glow {
@@ -140,13 +149,17 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  max-width: 300px;
+  max-width: min(300px, 80vw);
   margin-bottom: 8rem;
+  flex-shrink: 0;
 }
 
 .button-container.difficulty-buttons {
-  margin-bottom: 1rem;
-  gap: 1rem;
+  margin-bottom: 0;
+  gap: clamp(0.75rem, 2vh, 1.5rem);
+  flex: 1 1 auto;
+  justify-content: center;
+  min-height: 0;
 }
 
 .main-button {
@@ -245,9 +258,9 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
   position: fixed;
-  bottom: 2rem;
+  bottom: clamp(1.5rem, 4vh, 3rem);
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -257,7 +270,9 @@
   visibility: visible;
   opacity: 1;
   box-sizing: border-box;
-  padding: 0 1rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+  background: rgba(1, 14, 31, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .speed-mode-text {
@@ -1007,25 +1022,30 @@
   }
 
   .button-container.difficulty-buttons {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    gap: clamp(0.5rem, 1.5vh, 1rem);
   }
 
   .logo-container.difficulty-screen {
-    margin-top: 1.5rem;
+    margin-top: clamp(1rem, 3vh, 2rem);
   }
 
   .main-logo.difficulty-logo {
-    max-width: 150px;
+    max-width: min(150px, 18vw, 12vh);
   }
 
   .game-title.difficulty-title {
-    font-size: 1.6rem;
-    margin: 0.3rem 0;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    margin: clamp(0.3rem, 1vh, 0.8rem) 0;
+  }
+
+  .main-container.difficulty-container {
+    padding-bottom: clamp(7rem, 18vh, 12rem);
   }
 
   .speed-mode-container {
-    bottom: 1.5rem;
-    padding: 0 1rem;
+    bottom: clamp(1rem, 3vh, 2rem);
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
     position: fixed !important;
   }
 

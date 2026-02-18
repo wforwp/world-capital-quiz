@@ -785,7 +785,7 @@ function App() {
 
   if (screen === 'difficulty') {
     return (
-      <div className="main-container">
+      <div className="main-container difficulty-container">
         <div className="top-bar">
           <button className="back-button" onClick={handleBack}>
             ←
