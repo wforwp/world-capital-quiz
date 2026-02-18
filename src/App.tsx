@@ -594,6 +594,8 @@ function App() {
           <button className="back-button" onClick={() => {
             playSound('click')
             setShowHighScore(false)
+            setScreen('main')
+            window.history.pushState({ screen: 'main' }, '', window.location.href)
           }}>
             ←
           </button>
@@ -603,13 +605,14 @@ function App() {
         </div>
         <h1 className="game-title">최고 점수</h1>
         <div className="high-score-display">
-          <div className="high-score-value">{highScore}</div>
-          <div className="high-score-label">점</div>
+          <div className="high-score-value">{highScore}<span className="high-score-label">점</span></div>
         </div>
-        <div className="button-container">
+        <div className="button-container high-score-buttons">
           <button className="main-button start-button" onClick={() => {
             playSound('click')
             setShowHighScore(false)
+            setScreen('main')
+            window.history.pushState({ screen: 'main' }, '', window.location.href)
           }}>
             돌아가기
           </button>
